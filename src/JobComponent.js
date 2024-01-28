@@ -78,7 +78,7 @@ function JobComponent() {
 
                                                     </h5>
                                                     <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{product.location}</span>
-                                                    <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>Full Time</span>
+                                                    {/* <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>Full Time</span> */}
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">

@@ -65,8 +65,7 @@ import config from '../config'
       const response = await axios.get(
         `${APP_URL}/api/products/${id}`
       );
-
-      console.log("Trigger events", response.data)
+      console.log("Troubleshoot products data", response.data)
   
       dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: response.data });
     } catch (error) {

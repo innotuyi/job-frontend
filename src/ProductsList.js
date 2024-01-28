@@ -29,7 +29,7 @@ const ProductsList = () => {
 
 
   const showEditForm  = (id) => {
-    navigate(`/update/${id}`);
+    navigate(`/updateJob/${id}`);
   };
 
 
@@ -97,7 +97,7 @@ const ProductsList = () => {
                         </td>
 
                         <td>
-                          <img src={imageUrl + product.photo4} alt="Photo 3" className="img-thumbnail" width="40px" height="40px" />
+                        <img src={imageUrl + product.photo4} alt="Photo 3" className="img-thumbnail" width="40px" height="40px" />
                         </td>
                         <td>
                             <button className="btn btn-primary"

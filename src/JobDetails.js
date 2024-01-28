@@ -20,24 +20,24 @@ const JobDetails = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        async function fetchProducts() {
-            try {
-                const { data } = await axios.get(`${APP_URL}/api/jobs/${id}`);
-                console.log("before state", data);
-                setProductList(data);
-                console.log("all store properties", productList);
-            } catch (error) {
-                console.error("Error fetching job details:", error);
-            }
-        }
+    // useEffect(() => {
+    //     async function fetchProducts() {
+    //         try {
+    //             const { data } = await axios.get(`${APP_URL}/api/jobs/${id}`);
+    //             console.log("before state", data);
+    //             setProductList(data);
+    //             console.log("all store properties", productList);
+    //         } catch (error) {
+    //             console.error("Error fetching job details:", error);
+    //         }
+    //     }
 
-        fetchProducts();
-    }, [id]);
+    //     fetchProducts();
+    // }, [id]);
 
     useEffect(() => {
         dispatch(singleProperty(id));
-    }, [dispatch, id]);
+    }, []);
 
     return (
         <>

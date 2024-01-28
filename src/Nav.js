@@ -1,13 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import LOGO from './images/reallogo.PNG'
+import LOGO from './images/AMAMAZA.jpeg'
 
 function Nav() {
   return (
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <NavLink to="/">
-    <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-    <img src={LOGO} alt="Amamaza Logo" height="79" />
+    <a class="navbar-brand d-flex align-items-center text-center py-5 m-2 px-5 px-lg-5" style={{
+    }}>
+    <img src={LOGO} alt="Amamaza Logo" height="100px"  width="100px"/>
     </a>
     </NavLink>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

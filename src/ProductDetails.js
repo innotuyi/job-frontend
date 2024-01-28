@@ -7,34 +7,22 @@ import axios from 'axios';
 import config from './config';
 import { singleProduct } from './actions/productAction';
 
-const APP_URL = config.apiUrl;
+//const APP_URL = config.apiUrl;
 
 const ProductDetails = () => {
     const imageUrl = config.imgUrl;
 
-    const [product, setProduct] = useState({});
+   // const [product, setProduct] = useState({});
     const navigate = useNavigate();
     const productDetails = useSelector((state) => state.productDetails);
-    const { error } = productDetails;
+    const { error, product } = productDetails;
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        async function fetchProduct() {
-            try {
-                const { data } = await axios.get(`${APP_URL}/api/products/${id}`);
-                setProduct(data);
-            } catch (error) {
-                console.error("Error fetching product details:", error);
-            }
-        }
-
-        fetchProduct();
-    }, [id]);
 
     useEffect(() => {
         dispatch(singleProduct(id));
-    }, [dispatch, id]);
+    }, []);
 
     return (
         <>
@@ -44,7 +32,7 @@ const ProductDetails = () => {
                     {error && <p>Error: {error}</p>}
                     <h2 className="mb-4 text-center">Product Details: {product.name}</h2>
                     <p className="mb-2 text-center">
-                        <span className="text-bold">Price:</span> ${product.price}
+                        <span className="text-bold">Price:</span> Rwf{product.price}
                     </p>
                     <div className="row mb-4">
                         <div className="col-md-6 mb-3">

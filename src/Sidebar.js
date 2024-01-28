@@ -46,13 +46,13 @@ const Sidebar = () => {
         </li> */}
        
         <li>
-            <NavLink>
+            <NavLink to="/">
             <i class="fa fa-envelope me-3"></i> <a>Logout</a>
 
             </NavLink>
         </li>
         <li>
-            <NavLink>
+            <NavLink to="/dashboard">
             <i class="fa fa-envelope me-3"></i> <a>Settings</a>
 
             </NavLink>

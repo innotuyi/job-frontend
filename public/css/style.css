@@ -7,6 +7,38 @@
 }
 
 
+.hero-container {
+    background-image: url('../img/conv.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Adjust the height based on your design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .cta-button {
+    background-color: #ff4500; /* Adjust the color based on your design */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff6347; /* Adjust the hover color based on your design */
+  }
+  
+
+
 .sidebar-bg {
 
     background-color: #2124B1;
@@ -19,6 +51,9 @@
     margin-bottom: 1rem !important;
     list-style: none;
 
+  }
+  a {
+    text-decoration: none !important;
   }
   .statistics {
   

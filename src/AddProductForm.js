@@ -23,19 +23,19 @@ const AddProductForm = () => {
   const [photo4, setPhoto4] = useState(null);
 
 
-  useEffect(() => {
-    async function fetchCategories() {
-      const { data } = await axios.get(
-        `${APP_URL}/api/categories`
-      );
-      console.log("before state", data)
-      setCategory(data);
-      console.log("all catgories", categories)
-    }
+  // useEffect(() => {
+  //   async function fetchCategories() {
+  //     const { data } = await axios.get(
+  //       `${APP_URL}/api/categories`
+  //     );
+  //     console.log("before state", data)
+  //     setCategory(data);
+  //     console.log("all catgories", categories)
+  //   }
 
-    fetchCategories();
+  //   fetchCategories();
 
-  }, []);
+  // }, []);
 
   const handleProductNameChange = (e) => {
     setProductName(e.target.value);

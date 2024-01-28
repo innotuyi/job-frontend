@@ -49,11 +49,11 @@ useEffect(  ()=>{
   async function getforsale() {
     try {
 
-      const {data} = await axios.get(`${APP_URL}/api/allContacts`);
+      const {data} = await axios.get(`${APP_URL}/api/allJobs`);
 
       if(data) {
 
-        setForSale(data[0])
+        setForSale(data)
 
         console.log("ForSalae", data)
       }
@@ -160,31 +160,31 @@ useEffect(  ()=>{
                 </div>
             </div>
 
-            <div class="card m-4 border-0 shadow">
+            {/* <div class="card m-4 border-0 shadow">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h6 class="mb-0">Message</h6>
+                        <h6 class="mb-0">Jobs</h6>
                         <span class="badge bg-success">{forRent}</span>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
         {/* Second Part */}
         <div class="col-md-6">
-            <div class="card m-4 border-0 shadow">
+            {/* <div class="card m-4 border-0 shadow">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="mb-0">Messages</h6>
                         <span class="badge bg-info">{messagesCount}</span>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div class="card m-4 border-0 shadow">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h6 class="mb-0">Message</h6>
+                        <h6 class="mb-0">Jobs</h6>
                         <span class="badge bg-warning">{forsale}</span>
                     </div>
                 </div>

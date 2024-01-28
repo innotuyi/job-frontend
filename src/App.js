@@ -17,6 +17,9 @@ import AdvertScreen from './AdvertScreen'
 import ProductsList from './ProductsList'
 import ProductDetails from './ProductDetails'
 import ProductsSCreen from './ProductsSCreen'
+import RegisterPage from './RegisterPage'
+import UpdateProductScreen from './UpdateProductScreen'
+import UpdateJobScreen from './UpdateJobScreen'
 
 
 
@@ -26,8 +29,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} exact />
-          <Route path="jobDetails/:id" element={<JobDetails />} />
-          <Route path="productDetails/:id" element={<ProductDetails />} exact />
+          <Route path="jobDetails/:id" element={<JobDetails />} />  
+          <Route path="update/:id" element ={<UpdateProductScreen/>} />
+          <Route path="updateJob/:id" element ={<UpdateJobScreen/>} />
+          <Route path="productDetails/:id" element={<ProductDetails />} />
           <Route path="AddProduct" element={<ProductScreen />} />
           <Route path="post" element={<AdvertScreen />} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -35,6 +40,7 @@ function App() {
           <Route path="products" element={<ProductsList />} />
           <Route path="message" element={<MessagePage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="job" element={<JobList />} />

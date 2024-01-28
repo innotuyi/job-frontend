@@ -85,7 +85,7 @@ function ProductComponent() {
                                                     <div class="col-sm-12 col-md-8">
                                                         <div class="card-body">
                                                             <h5 class="card-title">{product.title}</h5>
-                                                            <p class="card-text text-truncate"><strong>Price:</strong> Rwf {product.price}</p>
+                                                            <p class="card-text text-truncate"><strong>Price:</strong> Rwf {product.price.toLocaleString()}</p>
                                                             <div class="d-flex mt-3">
                                                                 <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
                                                                 <button class="btn btn-primary" onClick={(e) => viewProduct(product.id)}>View Details</button>

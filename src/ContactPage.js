@@ -6,7 +6,7 @@ const ContactPage = () => {
   const contactInfo = {
     location: "Located in Kicukiro district, Niboye sector, Nyakabanda cell, Nyarurembo village, Comright house opposite Prince House, Rwandex-Remera road",
     email: "info@amamaza.rw",
-    tel: "+250788713693"
+    tel: "+250785231269"
   };
 
   return (

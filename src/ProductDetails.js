@@ -7,6 +7,8 @@ import axios from 'axios';
 import config from './config';
 import { singleProduct } from './actions/productAction';
 
+
+
 //const APP_URL = config.apiUrl;
 
 const ProductDetails = () => {

@@ -20,13 +20,13 @@ function Footer() {
                     <div class="col-lg-4 offset-md-2 col-md-6">
                         <h5 class="text-white mb-4">Contact</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kigali,kicukiro</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+250788713693</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+250785231269</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@amamaza.rw</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://twitter.com/amamazar78"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://web.facebook.com/profile.php?id=61556137320346"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/channel/UC13rOKwv8W1vfwtZZVos-pA"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/amamaza-amamaza-6278212b1/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     

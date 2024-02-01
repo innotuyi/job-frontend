@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import Nav from './Nav';
 import Footer from './Footer';
 import axios from 'axios';
@@ -20,24 +20,25 @@ const JobDetails = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     async function fetchProducts() {
-    //         try {
-    //             const { data } = await axios.get(`${APP_URL}/api/jobs/${id}`);
-    //             console.log("before state", data);
-    //             setProductList(data);
-    //             console.log("all store properties", productList);
-    //         } catch (error) {
-    //             console.error("Error fetching job details:", error);
-    //         }
-    //     }
-
-    //     fetchProducts();
-    // }, [id]);
-
     useEffect(() => {
         dispatch(singleProperty(id));
     }, []);
+
+    const shareOnFacebook = () => {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank');
+    };
+
+    const shareOnTwitter = () => {
+        window.open(`https://twitter.com/intent/tweet?url=${window.location.href}`, '_blank');
+    };
+
+    const shareOnLinkedIn = () => {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank');
+    };
+
+    const shareOnWhatsApp = () => {
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(window.location.href)}`, '_blank');
+    };
 
     return (
         <>
@@ -56,7 +57,16 @@ const JobDetails = () => {
                     <div className="mb-4" dangerouslySetInnerHTML={{ __html: property.description }} />
 
                     <div className="text-center">
-                       <NavLink to="/"><a className="btn btn-primary" >Go Back</a></NavLink>
+                        <button className="btn btn-primary" onClick={shareOnFacebook}>Share on Facebook</button>
+                        <button className="btn btn-primary mx-2" onClick={shareOnTwitter}>Share on Twitter</button>
+                        <button className="btn btn-primary mx-2" onClick={shareOnLinkedIn}>Share on LinkedIn</button>
+                        <button className="btn btn-primary" onClick={shareOnWhatsApp}>Share on WhatsApp</button>
+                    </div>
+
+                    <div className="text-center mt-3">
+                        <NavLink to="/">
+                            <a className="btn btn-primary">Go Back</a>
+                        </NavLink>
                     </div>
                 </div>
             </div>

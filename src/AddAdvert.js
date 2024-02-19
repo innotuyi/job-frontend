@@ -21,6 +21,8 @@ const AddAdvert = () => {
   const [post, setPost] = useState('');
   const [deadline, setDeadline] = useState('');
   const [photo1, setPhoto1] = useState(null);
+  const [video, setVideo] = useState(null);
+
 
 
 //   useEffect(() => {
@@ -68,6 +70,14 @@ const AddAdvert = () => {
     const file = e.target.files[0];
     setPhoto1(file);
   };
+
+
+  const handleVideoChange = (e) => {
+    const file = e.target.files[0];
+    setVideo(file);
+  };
+
+
 
 
   const handleSubmit = (e) => {
@@ -180,6 +190,16 @@ const AddAdvert = () => {
                 accept="image/*"
                 onChange={handlePhoto1Change}
                 required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="photo1" className="form-label">Upload video Here</label>
+              <input
+                type="file"
+                className="form-control"
+                id="photo1"
+                accept="image/*"
+                onChange={handleVideoChange}
               />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>

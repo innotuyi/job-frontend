@@ -41,6 +41,51 @@
   }
   
 
+  .banner {
+    height: 100px;
+    width: 100%;
+    background-color: #f8f9fa; /* Set your desired background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6; /* Add a border for separation */
+}
+
+.banner img {
+    height: 80px; /* Adjust the height of the logo image */
+    width: auto;
+}
+
+.banner p {
+    margin-left: 20px; /* Adjust the spacing between logo and text */
+    font-size: 20px; /* Adjust the font size */
+    color: #343a40; /* Set your desired text color */
+}
+
+
+/* Define keyframes for the animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Apply animation to both image and text */
+.banner img,
+.banner p {
+    animation: slideInFromLeft 7s linear infinite; /* Repeat the animation every 4 seconds */
+}
+
+
 
 .sidebar-bg {
 

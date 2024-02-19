@@ -10,6 +10,7 @@ import { singleProperty } from './actions/productAction';
 const APP_URL = config.apiUrl;
 
 const JobDetails = () => {
+    const imageUrl = config.imgUrl;
     const [productList, setProductList] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -26,19 +27,35 @@ const JobDetails = () => {
 
     const shareOnFacebook = () => {
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank');
+        window.location.reload()
     };
 
     const shareOnTwitter = () => {
         window.open(`https://twitter.com/intent/tweet?url=${window.location.href}`, '_blank');
+        window.location.reload()
+
     };
 
     const shareOnLinkedIn = () => {
         window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank');
+        window.location.reload()
+
     };
 
     const shareOnWhatsApp = () => {
         window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(window.location.href)}`, '_blank');
+        window.location.reload()
+
     };
+
+    const shareOnGmail = () => {
+        const subject = encodeURIComponent("Check out this link!");
+        const body = encodeURIComponent(`I thought you might find this link interesting: ${window.location.href}`);
+        window.open(`mailto:?subject=${subject}&body=${body}`);
+        window.location.reload()
+
+    };
+
 
     return (
         <>
@@ -46,7 +63,18 @@ const JobDetails = () => {
             <div className="container mt-4 d-flex justify-content-center align-items-center">
                 <div className="card p-4">
                     {error && <p>Error: {error}</p>}
+                    <div className="text-center">
+                        <img src={imageUrl + property.photo1} alt="Company Logo" className="mb-4" style={{ width: '150px' }} />
+                    </div>
+
+
                     <h2 className="mb-4 text-center">Call for Applications: {property.title}</h2>
+                    {property.video && (
+                        <div className="media" style={{ display: 'flex', justifyContent: 'center' }}>
+                            <video src={imageUrl + property.video} className="align-self-center mr-3" style={{ width: '400px', maxHeight: '100%' }} controls />
+                        </div>
+                    )}
+
                     <p className="mb-2 text-center">
                         <span className='text-bold'>Posted on:</span> {property.posted_date}{' '}
                         <span className='text-bold'>Deadline:</span> {property.deadline}
@@ -57,10 +85,11 @@ const JobDetails = () => {
                     <div className="mb-4" dangerouslySetInnerHTML={{ __html: property.description }} />
 
                     <div className="text-center">
-                        <button className="btn btn-primary" onClick={shareOnFacebook}>Share on Facebook</button>
-                        <button className="btn btn-primary mx-2" onClick={shareOnTwitter}>Share on Twitter</button>
-                        <button className="btn btn-primary mx-2" onClick={shareOnLinkedIn}>Share on LinkedIn</button>
-                        <button className="btn btn-primary" onClick={shareOnWhatsApp}>Share on WhatsApp</button>
+                        <button className="btn btn-primary" onClick={shareOnFacebook}><i className="fab fa-facebook-f"></i></button>
+                        <button className="btn btn-primary mx-2" onClick={shareOnTwitter}><i className="fab fa-twitter"></i></button>
+                        <button className="btn btn-primary mx-2" onClick={shareOnLinkedIn}><i className="fab fa-linkedin-in"></i></button>
+                        <button className="btn btn-primary" onClick={shareOnWhatsApp}><i className="fab fa-whatsapp" aria-hidden="true"></i></button>
+                        <button className="btn btn-primary mx-2" onClick={shareOnGmail}><i className="fas fa-envelope"></i></button>
                     </div>
 
                     <div className="text-center mt-3">
@@ -70,6 +99,7 @@ const JobDetails = () => {
                     </div>
                 </div>
             </div>
+
             <Footer />
         </>
     );

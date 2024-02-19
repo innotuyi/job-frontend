@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import LOGO from './images/AMAMAZA.jpeg'
+import Banner from './images/banner AMAMAZA-2-1.png'
 
 function Nav() {
   return (
@@ -14,6 +15,10 @@ function Nav() {
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <div className="banner">
+    <img src={Banner} alt="Banner" />
+</div>
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
            <NavLink to="/">

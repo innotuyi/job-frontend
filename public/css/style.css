@@ -61,6 +61,10 @@
     font-size: 20px; /* Adjust the font size */
     color: #343a40; /* Set your desired text color */
 }
+.nav-link {
+    white-space: nowrap !important;
+}
+
 
 
 /* Define keyframes for the animation */
@@ -80,6 +84,7 @@
 }
 
 /* Apply animation to both image and text */
+
 .banner img,
 .banner p {
     animation: slideInFromLeft 7s linear infinite; /* Repeat the animation every 4 seconds */

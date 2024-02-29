@@ -68,7 +68,7 @@ const JobDetails = () => {
                     </div>
 
 
-                    <h2 className="mb-4 text-center">Call for Applications: {property.title}</h2>
+                    <h2 className="mb-4 text-center">{property.title}</h2>
                     {property.video && (
                         <div className="media" style={{ display: 'flex', justifyContent: 'center' }}>
                             <video src={imageUrl + property.video} className="align-self-center mr-3" style={{ width: '400px', maxHeight: '100%' }} controls />
@@ -83,6 +83,14 @@ const JobDetails = () => {
                         <span className='text-bold'>Location:</span> {property.location}
                     </p>
                     <div className="mb-4" dangerouslySetInnerHTML={{ __html: property.description }} />
+
+                    {property.document && (
+                        <p className="mb-2 text-center">
+                            <span className='text-bold'>View attachment:</span> <a href={imageUrl + property.document} target="_blank" rel="noopener noreferrer">{property.document}</a>
+                        </p>
+                    )}
+
+
 
                     <div className="text-center">
                         <button className="btn btn-primary" onClick={shareOnFacebook}><i className="fab fa-facebook-f"></i></button>

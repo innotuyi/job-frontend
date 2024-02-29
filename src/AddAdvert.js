@@ -6,6 +6,7 @@ import config from './config'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+
 const APP_URL = config.apiUrl
 
 const AddAdvert = () => {
@@ -22,22 +23,26 @@ const AddAdvert = () => {
   const [deadline, setDeadline] = useState('');
   const [photo1, setPhoto1] = useState(null);
   const [video, setVideo] = useState(null);
+  const [document, setDocument] = useState(null);
+  const [status, setStatus] = useState('yes');
 
 
 
-//   useEffect(() => {
-//     async function fetchCategories() {
-//       const { data } = await axios.get(
-//         `${APP_URL}/api/categories`
-//       );
-//       console.log("before state", data)
-//       setCategory(data);
-//       console.log("all catgories", categories)
-//     }
 
-//     fetchCategories();
 
-//   }, []);
+  //   useEffect(() => {
+  //     async function fetchCategories() {
+  //       const { data } = await axios.get(
+  //         `${APP_URL}/api/categories`
+  //       );
+  //       console.log("before state", data)
+  //       setCategory(data);
+  //       console.log("all catgories", categories)
+  //     }
+
+  //     fetchCategories();
+
+  //   }, []);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -47,7 +52,7 @@ const AddAdvert = () => {
     const data = editor.getData();
     setDescription(data);
   };
-  
+
 
   const handleProductCategoryChange = (e) => {
     setProductCategory(e.target.value);
@@ -77,20 +82,35 @@ const AddAdvert = () => {
     setVideo(file);
   };
 
+  const handleDocumentChange = (e) => {
+    const file = e.target.files[0];
+    setDocument(file);
+  };
+
+  const handleStatusChange = (event) => {
+    setStatus(event.target.value);
+  };
+
+
 
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   const formData = new FormData();
+    const formData = new FormData();
     formData.append('title', title);
     formData.append('posted_date', post);
     formData.append('deadline', deadline);
     formData.append('location', location);
     formData.append('description', description);
     formData.append('photo1', photo1);
-   
+    formData.append('video', video);
+    formData.append('document', document);
+    formData.append('status', status);
+
+
+
     axios
       .post(`${APP_URL}/api/jobs`, formData)
       .then(function (response) {
@@ -125,7 +145,9 @@ const AddAdvert = () => {
                 editor={ClassicEditor}
                 data={description}
                 onChange={handleDescriptionChange}
+
               />
+
             </div>
             <div className="mb-3">
               <label htmlFor="productCategory" className="form-label">Job Category</label>
@@ -134,7 +156,7 @@ const AddAdvert = () => {
                 id="productCategory"
                 value={productCategory}
                 onChange={handleProductCategoryChange}
-                
+
               >
                 <option value="" disabled>Select Category</option>
                 {Array.isArray(categories) &&
@@ -163,8 +185,8 @@ const AddAdvert = () => {
             <div className="mb-3">
               <label htmlFor="photo2" className="form-label">Posted date</label>
               <input
-                type="text"
-                value = {post}
+                type="date"
+                value={post}
                 className="form-control"
                 id="photo2"
                 onChange={handlePostChange}
@@ -174,7 +196,7 @@ const AddAdvert = () => {
             <div className="mb-3">
               <label htmlFor="photo3" className="form-label">Deadline</label>
               <input
-                type="text"
+                type="date"
                 className="form-control"
                 id="photo3"
                 onChange={handleDeadlineChange}
@@ -202,6 +224,72 @@ const AddAdvert = () => {
                 onChange={handleVideoChange}
               />
             </div>
+            <div className="mb-3">
+              <label htmlFor="photo1" className="form-label">Upload document</label>
+              <input
+                type="file"
+                className="form-control"
+                id="photo1"
+                onChange={handleDocumentChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="isActive" className="form-label">Is Active</label>
+              <div className="form-check">
+                <label className="form-check-label" htmlFor="isActiveYes">Yes</label>
+
+                <input
+                  type="radio"
+                  className="form-check-input"
+                  id="isActiveYes"
+                  name="isActive"
+                  value="yes"
+                  checked={status === "yes"}
+                  onChange={handleStatusChange}
+                />
+              </div>
+              <div className="form-check">
+                <label className="form-check-label" htmlFor="isActiveNo">No</label>
+
+                <input
+                  type="radio"
+                  className="form-check-input"
+                  id="isActiveNo"
+                  name="isActive"
+                  value="no"
+                  checked={status === "no"}
+                  onChange={handleStatusChange}
+                />
+              </div>
+   <div className="mb-3">
+    <label htmlFor="isActive" className="form-label">Is Active</label>
+    <div className="form-check">
+        <label className="form-check-label" htmlFor="isActiveYes">Yes</label>
+        <input
+            type="radio"
+            className="form-check-input"
+            id="isActiveYes"
+            name="isActive"
+            value="yes"
+            checked={status === 'yes'} // Check if status is 'yes'
+            onChange={handleStatusChange}
+        />
+    </div>
+    <div className="form-check">
+        <label className="form-check-label" htmlFor="isActiveNo">No</label>
+        <input
+            type="radio"
+            className="form-check-input"
+            id="isActiveNo"
+            name="isActive"
+            value="no"
+            checked={status === 'no'} // Check if status is 'no'
+            onChange={handleStatusChange}
+        />
+    </div>
+</div>
+         </div>
+
             <button type="submit" className="btn btn-primary">Submit</button>
           </form>
         </div>

@@ -20,6 +20,7 @@ import ProductsSCreen from './ProductsSCreen'
 import RegisterPage from './RegisterPage'
 import UpdateProductScreen from './UpdateProductScreen'
 import UpdateJobScreen from './UpdateJobScreen'
+import PostAdvert from './PostAdvert'
 
 
 
@@ -45,6 +46,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="job" element={<JobList />} />
           <Route path="ProductsList" element={<ProductsSCreen />} />
+          <Route path="PostAdvert" element={<PostAdvert />} />
+
 
           {/* <Route path="jo" element={<JobDetails2 />} />
           <Route path="details3" element={<JobDetails3 />} /> */}

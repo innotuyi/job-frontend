@@ -29,6 +29,8 @@ const UpdateProduct = () => {
     const [photo1, setPhoto1] = useState(null);
     const [photo2, setPhoto2] = useState(null);
     const [photo3, setPhoto3] = useState(null);
+    const [status, setStatus] = useState('yes');
+
 
     useEffect(() => {
         async function fetchCategories() {
@@ -78,6 +80,10 @@ const UpdateProduct = () => {
         setPhoto1(file);
     };
 
+    const handleStatusChange = (event) => {
+        setStatus(event.target.value);
+    };
+
     // const handlePhoto2Change = (e) => {
     //     const file = e.target.files[0];
     //     setPhoto2(file);
@@ -105,18 +111,20 @@ const UpdateProduct = () => {
             // Return false if file or file.type is undefined
             return false;
         };
-        
+
 
         const formData = new FormData();
-        formData.append('name', productName);
+        formData.append('title', productName);
         formData.append('categoryID', productCategory);
         formData.append('description', description);
+        formData.append('status', status);
+
 
         // Append files only if they are valid
-    if (isValidFile(photo1)) {
-        formData.append('photo1', photo1);
-    }
-  
+        if (isValidFile(photo1)) {
+            formData.append('photo1', photo1);
+        }
+
 
         axios
             .post(`${APP_URL}/api/jobs/${id}`, formData)
@@ -128,7 +136,7 @@ const UpdateProduct = () => {
             });
 
 
-          
+
     };
 
     return (
@@ -166,7 +174,7 @@ const UpdateProduct = () => {
                                 id="productCategory"
                                 value={productCategory}
                                 onChange={handleProductCategoryChange}
-                                
+
                             >
                                 <option value="" disabled>Select Category</option>
                                 {Array.isArray(categories) &&
@@ -191,6 +199,38 @@ const UpdateProduct = () => {
                             />
                             {photo1 && <p>Selected file: {photo1.name}</p>}
                         </div>
+
+                        <div className="mb-3">
+                            <label htmlFor="isActive" className="form-label">Is Active</label>
+                            <div className="form-check">
+                                <label className="form-check-label" htmlFor="isActiveYes">Yes</label>
+                                <input
+                                    type="radio"
+                                    className="form-check-input"
+                                    id="isActiveYes"
+                                    name="isActive"
+                                    value="yes"
+                                    checked={status === 'yes'} // Check if status is 'yes'
+                                    onChange={handleStatusChange}
+                                />
+                            </div>
+                            <div className="form-check">
+                                <label className="form-check-label" htmlFor="isActiveNo">No</label>
+                                <input
+                                    type="radio"
+                                    className="form-check-input"
+                                    id="isActiveNo"
+                                    name="isActive"
+                                    value="no"
+                                    checked={status === 'no'} // Check if status is 'no'
+                                    onChange={handleStatusChange}
+                                />
+                            </div>
+                        </div>
+
+
+
+
                         {/* <div className="mb-3">
                             <label htmlFor="photo2" className="form-label">Photo 2</label>
                             <input

@@ -22,7 +22,7 @@ function JobComponent() {
     useEffect(() => {
         async function fetchJobs() {
             const { data } = await axios.get(
-                `${APP_URL}/api/jobs`
+                `${APP_URL}/api/visibleJobs`
             );
             console.log("before state", data)
             setProductList(data);
@@ -53,58 +53,43 @@ function JobComponent() {
     return (
         <>
             <div className='col-md-6'>
-                    <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
-                        <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
-                            <li class="nav-item">
-                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
-                                    <h6 class="mt-n1 mb-0">Jobs</h6>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                <h6 class="mt-n1 mb-0">Jobs</h6>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
 
-                                {productList.map((product, index) => (
-
-                                    <div class="job-item p-4 mb-4">
-                                        <div class="row g-4">
-                                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                                <img class="flex-shrink-0 img-fluid border rounded" src={imageUrl + product.photo1} alt="" style={{
-                                                    width: "80px",
-                                                    height: "80px",
-
-
-                                                }} />
-                                                <div class="text-start ps-4">
-                                                    <h5 class="mb-3">{product.title}
-
-                                                    </h5>
-                                                    <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{product.location}</span>
-                                                    {/* <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>Full Time</span> */}
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                                <div class="d-flex mb-3">
-                                                    <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
-                                                   
-                                                    <button class="btn btn-primary" onClick={(e) => details(product.id)}>View Details</button>
-                                                  
-                                                </div>
-                                                <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Posted On:{product.posted_date} </small>
-
-                                                <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Deadline: {product.deadline}</small>
+                            {productList.map((product, index) => (
+                                <div class="job-item p-4 mb-4" key={index}>
+                                    <div class="row g-4">
+                                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                            <img class="flex-shrink-0 img-fluid border rounded" src={imageUrl + product.photo1} alt="" style={{ width: "80px", height: "80px" }} />
+                                            <div class="text-start ps-4">
+                                                <h5 class="mb-3">{product.title}</h5>
+                                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{product.location}</span>
+                                                <span class="text-truncate me-3"><i class="fa fa-eye text-primary me-2"></i>{product.views_count}</span>
                                             </div>
                                         </div>
+                                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                            <div class="d-flex mb-3">
+                                                <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
+                                                <button class="btn btn-primary" onClick={() => details(product.id)}>View Details</button>
+                                            </div>
+                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Posted On:{product.posted_date}</small>
+                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Deadline: {product.deadline}</small>
+                                        </div>
                                     </div>
-                                ))}
-
-
-
-                            </div>
-
+                                </div>
+                            ))}
                         </div>
                     </div>
-                   </div>
+                </div>
+            </div>
         </>
     )
 }

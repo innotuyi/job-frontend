@@ -71,6 +71,7 @@ const ProductList = () => {
                       <th scope="col">#</th>
                       <th scope="col">Product Name</th>
                       <th scope="col">Description</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Category</th>
                      
                     </tr>
@@ -81,6 +82,7 @@ const ProductList = () => {
                         <th scope="row">{product.id}</th>
                         <td>{product.title}</td>
                         <td>{product.description}</td>
+                        <td>{product.status === 1 ? 'Visible' : 'Invisible'}</td>
                         <td>{product.category_name}</td>
                         <td>
                             <button className="btn btn-primary"

@@ -45,13 +45,20 @@ import config from '../config'
     try {
       dispatch({ type: PROPERTY_DETAILS_REQUEST });
   
-      const response = await axios.get(
-        `${APP_URL}/api/jobs/${id}`
-      );
-
-      console.log("Trigger events", response.data)
-  
+      // Fetch property details
+      const response = await axios.get(`${APP_URL}/api/jobs/${id}`);
       dispatch({ type: PROPERTY_DETAILS_SUCCESS, payload: response.data });
+  
+      // Increment view count
+      try {
+        const responseData = await axios.post(`${APP_URL}/api/job/${id}`);
+        if (!responseData.ok) {
+          throw new Error('Failed to increment view count');
+        }
+      } catch (error) {
+        // Handle error when incrementing view count
+        console.error('Error incrementing view count:', error);
+      }
     } catch (error) {
       dispatch({ type: PROPERTY_DETAILS_FAIL, payload: error });
     }

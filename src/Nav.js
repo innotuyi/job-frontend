@@ -19,37 +19,43 @@ function Nav() {
     <img src={Banner} alt="Banner" />
 </div>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-           <NavLink to="/">
-           <a class="nav-item nav-link active">Home</a>
-           </NavLink>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
-                <div class="dropdown-menu rounded-0 m-0">
-                   <NavLink to="/job">
-                   <a class="dropdown-item">Job list</a>
-                   </NavLink>
-                </div>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <NavLink to="/">
+            <a class="nav-item nav-link active">Home</a>
+        </NavLink>
+        <NavLink to="/PostAdvert">
+            <a class="nav-item nav-link" style={{
+               "white-space": "nowrap"
+            }}>POST ADVERT</a>
+        </NavLink>
+
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
+            <div class="dropdown-menu rounded-0 m-0">
+                <NavLink to="/job">
+                    <a class="dropdown-item">Job list</a>
+                </NavLink>
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
-                <div class="dropdown-menu rounded-0 m-0">
-                   <NavLink to="/ProductsList">
-                   <a class="dropdown-item">Product list</a>
-                   </NavLink>
-                </div>
-            </div>
-           <NavLink to="/about">
-           <a href="#" class="nav-item nav-link">About</a>
-           </NavLink>
-            
-          
-           <NavLink to="/contact">
-           <a  class="nav-item nav-link">Contact</a>
-           </NavLink>
         </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+            <div class="dropdown-menu rounded-0 m-0">
+                <NavLink to="/ProductsList">
+                    <a class="dropdown-item">Product list</a>
+                </NavLink>
+            </div>
+        </div>
+        <NavLink to="/about">
+            <a href="#" class="nav-item nav-link">About</a>
+        </NavLink>
+
+        <NavLink to="/contact">
+            <a class="nav-item nav-link">Contact</a>
+        </NavLink>
     </div>
+</div>
+
 </nav>
   )
 }

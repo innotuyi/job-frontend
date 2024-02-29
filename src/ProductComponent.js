@@ -100,15 +100,22 @@ function ProductComponent() {
                         </div>
                     </div>
                 </div>
+                {/* <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/amamazar78?ref_src=twsrc%5Etfw">Tweets by amamazar78</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                 */}
+                
+                </div>
 
-                <div className="social-icons">
+
+
+                {/* <div className="social-icons">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
 
-                </div>
-            </div>
+                </div> */}
+
+                
 
         </>
     )

@@ -21,7 +21,7 @@ const JobList = () => {
   useEffect(() => {
       async function fetchJobs() {
           const { data } = await axios.get(
-              `${APP_URL}/api/jobs`
+              `${APP_URL}/api/visibleJobs`
           );
           console.log("before state", data)
           setProductList(data);

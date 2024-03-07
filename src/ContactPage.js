@@ -31,7 +31,7 @@ const ContactPage = () => {
 
         <div className="card mt-3">
           <div className="card-body">
-            <h5 className="card-title">TEL</h5>
+            <h5 className="card-title">Phone</h5> {/* Changed TEL to Phone for better clarity */}
             <p className="card-text">{contactInfo.tel}</p>
           </div>
         </div>

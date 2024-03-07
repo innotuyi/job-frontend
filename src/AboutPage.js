@@ -14,30 +14,18 @@ const AboutPage = () => {
       <Nav />
 
       <div className="container mt-4">
-        <h1>Contact Us</h1>
+        <h1>About Amamaza Group</h1> {/* Updated heading for better SEO */}
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Location</h5>
+            <h5 className="card-title">Contact Information</h5> {/* Updated card title for better clarity */}
             <p className="card-text">{contactInfo.location}</p>
-          </div>
-        </div>
-
-        <div className="card mt-3">
-          <div className="card-body">
-            <h5 className="card-title">Email</h5>
-            <p className="card-text">{contactInfo.email}</p>
-          </div>
-        </div>
-
-        <div className="card mt-3">
-          <div className="card-body">
-            <h5 className="card-title">TEL</h5>
-            <p className="card-text">{contactInfo.tel}</p>
+            <p className="card-text">Email: {contactInfo.email}</p> {/* Updated card text for better clarity */}
+            <p className="card-text">Tel: {contactInfo.tel}</p> {/* Updated card text for better clarity */}
           </div>
         </div>
 
         <div className="mt-4">
-          <h2>Amamaza Group</h2>
+          <h2>Amamaza Group Overview</h2> {/* Updated heading for better SEO */}
           <p>Amamaza Group is a vibrant and youth-led digital advertising company committed to empowering businesses in Rwanda and beyond to thrive in the digital era. Through innovative strategies and a deep understanding of digital platforms, we provide cost-effective advertising solutions tailored to meet the diverse needs of our clients. Our youth-led approach brings fresh perspectives and creative energy to every project, ensuring dynamic and impactful results.</p>
 
           <h3>Mission Statement</h3>
@@ -81,9 +69,9 @@ const AboutPage = () => {
             <li>Transparent Communication</li>
           </ul>
 
-          <p>Get in Touch: Ready to elevate your digital advertising efforts and reach your target audience effectively? Contact Amamaza Group today for a consultation and discover how we can help you achieve your marketing goals at minimum prices.</p>
-          <p>Website: <a href="www.amamaza.rw">www.amamaza.rw</a></p>
-          <p>Twitter: @amamazar78</p>
+          <p>Contact Us: Ready to elevate your digital advertising efforts and reach your target audience effectively? Contact Amamaza Group today for a consultation and discover how we can help you achieve your marketing goals at minimum prices.</p>
+          <p>Website: <a href="https://www.amamaza.rw">www.amamaza.rw</a></p>
+          <p>Twitter: <a href="https://twitter.com/amamazar78">@amamazar78</a></p>
         </div>
       </div>
 

@@ -9,22 +9,56 @@
 
 
 
+.filter-form {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-form input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .filter-form button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Blue color for button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-form button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  
+
 
 .hero-container {
-    background-image: url('../img/conv.jpg');
+    /* background-image: url('../img/gud.jpg'); */
     background-size: cover;
     background-position: center;
-    height: 500px; /* Adjust the height based on your design */
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     text-align: center;
+    max-height: 100px; /* Adjust the value as needed */
   }
   
   .hero-content {
-    max-width: 600px;
+    max-width: 300px;
   }
+  
   
   .cta-button {
     background-color: #ff4500; /* Adjust the color based on your design */
@@ -186,7 +220,6 @@
     padding: 25px 0;
     color: #FFFFFF;
     font-size: 15px;
-    text-transform: uppercase;
     outline: none;
 }
 
@@ -231,6 +264,7 @@
         margin-top: 0;
         transform: rotateX(-75deg);
         transform-origin: 0% 0%;
+        text-transform:capitalize !important;
         opacity: 0;
         visibility: hidden;
         transition: .5s;

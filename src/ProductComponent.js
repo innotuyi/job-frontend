@@ -100,8 +100,8 @@ function ProductComponent() {
                         </div>
                     </div>
                 </div>
-                {/* <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/amamazar78?ref_src=twsrc%5Etfw">Tweets by amamazar78</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                 */}
+             {/* <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/amamazar78?ref_src=twsrc%5Etfw">Tweets by amamazar78</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                  */}
                 
                 </div>
 

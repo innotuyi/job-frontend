@@ -40,7 +40,7 @@ function Nav() {
                     <NavLink to="/PostAdvert">
                         <a class="nav-item nav-link" style={{
                             "white-space": "nowrap"
-                        }}>POST ADVERT</a>
+                        }}>POST Advert</a>
                     </NavLink>
 
                     <div class="nav-item dropdown">

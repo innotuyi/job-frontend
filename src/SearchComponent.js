@@ -1,9 +1,8 @@
 import React from 'react';
-
 const SearchComponent = () => {
     return (
-        <div className="d-flex justify-content-center mt-5"> {/* Centering the component horizontally */}
-            <form className="filter-form">
+        <div className="d-flex justify-content-center"> {/* Centering the component horizontally */}
+            <form className="filter-form rounded"> {/* Adding rounded corners and padding */}
                 <div className="row">
                     <div className="col-md-5">
                         <select className="form-control">

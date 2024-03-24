@@ -17,19 +17,19 @@ function Nav() {
             </button>
             <div className="test">
 
-                 <NavLink to="/PostAdvert"> <a href="#" class="nav-item nav-link">
-                    
-                <img src={Ban} alt="Banner"  style={
-                    {
+                <NavLink to="/PostAdvert"> <a href="#" class="nav-item nav-link">
 
-                        "height": "80px",
-                        "width": "auto"
-                    }
-                } />
+                    <img src={Ban} alt="Banner" style={
+                        {
+
+                            "height": "80px",
+                            "width": "auto"
+                        }
+                    } />
                 </a>
-                
+
                 </NavLink>
-                
+
             </div>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">

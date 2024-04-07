@@ -6,6 +6,8 @@ import Footer from './Footer';
 import axios from 'axios';
 import config from './config';
 import { singleProperty } from './actions/productAction';
+import { Helmet } from 'react-helmet';
+
 
 const APP_URL = config.apiUrl;
 
@@ -59,6 +61,21 @@ const JobDetails = () => {
 
     return (
         <>
+          <Helmet>
+                {/* Open Graph Protocol meta tags */}
+                <meta property="og:title" content={property.title} />
+                <meta property="og:description" content={property.description} />
+                <meta property="og:image" content={imageUrl + property.photo1} />
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Card meta tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={property.title} />
+                <meta name="twitter:description" content={property.description} />
+                <meta name="twitter:image" content={imageUrl + property.photo1} />
+                <meta name="twitter:url" content={window.location.href} />
+            </Helmet>
             <Nav />
             <div className="container mt-4 d-flex justify-content-center align-items-center">
                 <div className="card p-4">

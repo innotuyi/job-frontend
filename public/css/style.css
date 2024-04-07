@@ -7,8 +7,6 @@
 }
 /* Add this CSS to your existing styles or create a new stylesheet */
 
-
-
 .filter-form {
     position: absolute;
     top: 50px; /* Adjust as needed */
@@ -43,7 +41,7 @@
   
 
 
-.page-container {
+/* .page-container {
     background-image: url('../img/conv.jpg');
     background-size: cover;
     background-position: center;
@@ -53,7 +51,7 @@
     color: #fff;
     text-align: center;
     height: 500px;
-  }
+  } */
   
  
   
@@ -73,27 +71,7 @@
   }
   
 
-  .test {
-    height: 100px;
-    width: 100%;
-    background-color: #f8f9fa; /* Set your desired background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #dee2e6; /* Add a border for separation */
-}
 
-.test img {
-    height: 80px; /* Adjust the height of the logo image */
-    width: auto;
-
-}
-
-.test p {
-    margin-left: 20px; /* Adjust the spacing between logo and text */
-    font-size: 20px; /* Adjust the font size */
-    color: #343a40; /* Set your desired text color */
-}
 
 
 

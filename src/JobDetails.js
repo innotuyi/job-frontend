@@ -20,11 +20,13 @@ const JobDetails = () => {
     const navigate = useNavigate();
     const propertyDetails = useSelector((state) => state.propertyDetails);
     const { error, property } = propertyDetails;
-    const { id } = useParams();
+    const { id ,slug} = useParams();
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(singleProperty(id));
+        dispatch(singleProperty(id, slug));
+
+        console.log("not working", property)
     }, []);
 
     const shareOnFacebook = () => {

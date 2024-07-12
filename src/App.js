@@ -30,7 +30,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} exact />
-          <Route path="jobDetails/:id" element={<JobDetails />} />  
+          <Route path="jobDetails/:slug" element={<JobDetails />} />  
           <Route path="update/:id" element ={<UpdateProductScreen/>} />
           <Route path="updateJob/:id" element ={<UpdateJobScreen/>} />
           <Route path="productDetails/:id" element={<ProductDetails />} />

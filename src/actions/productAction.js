@@ -29,11 +29,12 @@ import config from '../config'
       const response = await axios.get(
         `${APP_URL}/api/jobs`
       );
-  
       dispatch({
         type: PRODUCT_SUCCESS,
         payload: response.data,
       });
+      console.log("products.........",response.data)
+
     } catch (error) {
       dispatch({ type: PRODUCT_FAIL, payload: error });
       console.log("error:", error);
@@ -41,12 +42,12 @@ import config from '../config'
   };
   
 
-  export const singleProperty = (id) => async (dispatch) => {
+  export const singleProperty = (id,slug) => async (dispatch) => {
     try {
       dispatch({ type: PROPERTY_DETAILS_REQUEST });
   
       // Fetch property details
-      const response = await axios.get(`${APP_URL}/api/jobs/${id}`);
+      const response = await axios.get(`${APP_URL}/api/jobs/${slug}`);
       dispatch({ type: PROPERTY_DETAILS_SUCCESS, payload: response.data });
   
       // Increment view count

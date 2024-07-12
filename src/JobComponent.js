@@ -47,8 +47,8 @@ function JobComponent() {
 
     }, []);
 
-    const details = (id) => {
-        navigate(`/jobDetails/${id}`);
+    const details = (id, slug) => {
+        navigate(`/jobDetails/${slug}`);
     };
     return (
         <>
@@ -78,7 +78,7 @@ function JobComponent() {
                                         <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                             <div class="d-flex mb-3">
                                                 <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
-                                                <button class="btn btn-primary" onClick={() => details(product.id)}>View Details</button>
+                                                <button class="btn btn-primary" onClick={() => details(product.id, product.slug)}>View Details</button>
                                             </div>
                                             <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Posted On:{product.posted_date}</small>
                                             <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Deadline: {product.deadline}</small>

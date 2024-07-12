@@ -93,7 +93,7 @@ const JobList = () => {
                                                 <div class="d-flex mb-3">
                                                     <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
                                                    
-                                                    <button class="btn btn-primary" onClick={(e) => details(product.id)}>View Details</button>
+                                                    <button class="btn btn-primary" onClick={(e) => details(product.slug)}>View Details</button>
                                                   
                                                 </div>
                                                 <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Posted On:{product.posted_date} </small>

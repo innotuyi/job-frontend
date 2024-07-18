@@ -11,7 +11,7 @@ function Home() {
     <>
     <Nav/>
     <Hero/>
-    <Category/>
+    {/* <Category/> */}
     <Job/>
     <Footer/>
     <SearchComponent/>

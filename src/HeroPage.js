@@ -38,15 +38,27 @@ const HeroPage = () => {
                     <option selected>Category</option>
                     <option value="1">Marketing</option>
                     <option value="2">Project Management</option>
-                    <option value="3">Business</option>
+                    <option value="3">Customer Service</option>
+                    <option value="3">Business Developmen</option>
+                    <option value="3">Sales & Communication</option>
+                    <option value="3">Teaching & Education</option>
+                    <option value="3">Design & Creative</option>
+
+
+
+
                   </select>
                 </div>
                 <div class="col-md-4">
                   <select class="form-select border-0">
                     <option selected>Location</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
+                    <option value="1">Kigali City</option>
+                    <option value="2">West</option>
+                    <option value="3">East</option>
+                    <option value="3">North</option>
+                    <option value="3">South</option>
+
+
                   </select>
                 </div>
               </div>

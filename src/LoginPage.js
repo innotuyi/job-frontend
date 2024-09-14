@@ -50,7 +50,7 @@ const LoginPage = () => {
           payload
         );
         console.log("login response", response.data)
-        localStorage.setItem("token", response.data);
+        localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
       } catch (error) {
         navigate("/login");

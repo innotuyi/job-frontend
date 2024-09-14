@@ -21,6 +21,7 @@ import RegisterPage from './RegisterPage'
 import UpdateProductScreen from './UpdateProductScreen'
 import UpdateJobScreen from './UpdateJobScreen'
 import PostAdvert from './PostAdvert'
+import ProtectedRoute from './ProtectedRoute'
 
 
 
@@ -30,13 +31,23 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} exact />
-          <Route path="jobDetails/:slug" element={<JobDetails />} />  
-          <Route path="update/:id" element ={<UpdateProductScreen/>} />
-          <Route path="updateJob/:id" element ={<UpdateJobScreen/>} />
+          <Route path="jobDetails/:slug" element={<JobDetails />} />
+          <Route path="update/:id" element={<UpdateProductScreen />} />
+          <Route path="updateJob/:id" element={<UpdateJobScreen />} />
           <Route path="productDetails/:id" element={<ProductDetails />} />
           <Route path="AddProduct" element={<ProductScreen />} />
           <Route path="post" element={<AdvertScreen />} />
-          <Route path="dashboard" element={<Dashboard />} />
+
+          {/* Protected Routes */}
+          <Route
+            path="dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="productList" element={<ProductList />} />
           <Route path="products" element={<ProductsList />} />
           <Route path="message" element={<MessagePage />} />

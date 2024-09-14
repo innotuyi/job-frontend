@@ -12,6 +12,7 @@ const APP_URL = config.apiUrl
 const UpdateProduct = () => {
 
     const navigate = useNavigate();
+
     const ProductDetails = useSelector((state) => state.productDetails);
 
     const { error, product } = ProductDetails;
@@ -54,19 +55,19 @@ const UpdateProduct = () => {
 
     }, []);
 
-    // useEffect(() => {
-    //     async function Categories() {
-    //         const { data } = await axios.get(
-    //             `${APP_URL}/api/categories`
-    //         );
-    //         console.log("before state", data)
-    //         setCategory(data);
-    //         console.log("all catgories", categories)
-    //     }
+    useEffect(() => {
+        async function Categories() {
+            const { data } = await axios.get(
+                `${APP_URL}/api/categories`
+            );
+            console.log("before state", data)
+            setCategory(data);
+            console.log("all catgories", categories)
+        }
 
-    //     Categories();
+        Categories();
 
-    // }, []);
+    }, []);
 
     const handleProductNameChange = (e) => {
         setProductName(e.target.value);

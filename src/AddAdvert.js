@@ -18,6 +18,7 @@ const AddAdvert = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [productCategory, setProductCategory] = useState('');
+  const [selectedCategoryID, setSelectedCategoryID] = useState(''); // State for selected category
   const [location, setLocation] = useState('');
   const [post, setPost] = useState('');
   const [deadline, setDeadline] = useState('');
@@ -30,19 +31,19 @@ const AddAdvert = () => {
 
 
 
-  //   useEffect(() => {
-  //     async function fetchCategories() {
-  //       const { data } = await axios.get(
-  //         `${APP_URL}/api/categories`
-  //       );
-  //       console.log("before state", data)
-  //       setCategory(data);
-  //       console.log("all catgories", categories)
-  //     }
+  useEffect(() => {
+    async function fetchCategories() {
+      const { data } = await axios.get(
+        `${APP_URL}/api/categories`
+      );
+      console.log("before state", data)
+      setCategory(data);
+      console.log("all catgories", categories)
+    }
 
-  //     fetchCategories();
+    fetchCategories();
 
-  //   }, []);
+  }, []);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -56,6 +57,8 @@ const AddAdvert = () => {
 
   const handleProductCategoryChange = (e) => {
     setProductCategory(e.target.value);
+    setSelectedCategoryID(e.target.value);
+
   };
 
   const handleLocationChange = (e) => {
@@ -104,6 +107,7 @@ const AddAdvert = () => {
     formData.append('deadline', deadline);
     formData.append('location', location);
     formData.append('description', description);
+    formData.append('categoryID', selectedCategoryID)
     formData.append('photo1', photo1);
     formData.append('video', video);
     formData.append('document', document);
@@ -261,34 +265,34 @@ const AddAdvert = () => {
                   onChange={handleStatusChange}
                 />
               </div>
-   <div className="mb-3">
-    <label htmlFor="isActive" className="form-label">Is Active</label>
-    <div className="form-check">
-        <label className="form-check-label" htmlFor="isActiveYes">Yes</label>
-        <input
-            type="radio"
-            className="form-check-input"
-            id="isActiveYes"
-            name="isActive"
-            value="yes"
-            checked={status === 'yes'} // Check if status is 'yes'
-            onChange={handleStatusChange}
-        />
-    </div>
-    <div className="form-check">
-        <label className="form-check-label" htmlFor="isActiveNo">No</label>
-        <input
-            type="radio"
-            className="form-check-input"
-            id="isActiveNo"
-            name="isActive"
-            value="no"
-            checked={status === 'no'} // Check if status is 'no'
-            onChange={handleStatusChange}
-        />
-    </div>
-</div>
-         </div>
+              <div className="mb-3">
+                <label htmlFor="isActive" className="form-label">Is Active</label>
+                <div className="form-check">
+                  <label className="form-check-label" htmlFor="isActiveYes">Yes</label>
+                  <input
+                    type="radio"
+                    className="form-check-input"
+                    id="isActiveYes"
+                    name="isActive"
+                    value="yes"
+                    checked={status === 'yes'} // Check if status is 'yes'
+                    onChange={handleStatusChange}
+                  />
+                </div>
+                <div className="form-check">
+                  <label className="form-check-label" htmlFor="isActiveNo">No</label>
+                  <input
+                    type="radio"
+                    className="form-check-input"
+                    id="isActiveNo"
+                    name="isActive"
+                    value="no"
+                    checked={status === 'no'} // Check if status is 'no'
+                    onChange={handleStatusChange}
+                  />
+                </div>
+              </div>
+            </div>
 
             <button type="submit" className="btn btn-primary">Submit</button>
           </form>
